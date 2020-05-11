@@ -1,0 +1,97 @@
+.cart-main-wrapper{
+   .title{
+      height: 60px;
+      background-color: #060d4b;
+      align-items: center;
+
+      h1{
+         text-align: center;
+         color: whitesmoke;
+         align-items: center;
+      }
+   }
+
+   .checkout-wrapper{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      // .paypal-button{
+      //    // margin-top: 15px;
+      //    // border: 1 solid black;
+      // }
+
+      .total-detail{
+         padding-left: 15px;
+         p{
+            font-size: 1.7em;;
+            color: black;
+         }
+      }      
+   }
+
+   .cart-items-wrapper{
+      // background-color: #f7ebeb;
+      .cart-detail-wrapper{
+        display: flex;
+        align-items: center;
+      //   margin-top: 15px;
+        margin-left: 100px;
+
+         .image img{
+            width: 16vw;
+            height: 16vw;
+            border-radius: 5px;           
+         }
+
+         .details{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;    
+            margin-left: 50px;   
+
+            .price{
+               font-size: 1.5em;
+               color: #0d18b1;
+            }    
+
+            .buttons-wrapper{
+               display: flex;
+               align-items: center;              
+
+               button{
+                  padding: 3px 8px;
+                  font-size: 1em;
+                  color: black;
+                  border-radius: 4px;
+                  background-color: #daa520;
+                  border: 1 solid #daa520;
+                  transition: 0.2s ease-in-out;
+
+                  &:hover{
+                     background-color: #dfc28c;
+                  }
+               }
+
+               .quantity-items{
+                  padding: 0px 15px;
+                  font-weight: bold;;
+               }
+            }
+
+            .remove-item {
+               p{
+                  width: 84px;
+                  color: #c71e1e;
+                  text-decoration: underline;
+
+                  &:hover{
+                     cursor: pointer;
+                     color: #545454;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

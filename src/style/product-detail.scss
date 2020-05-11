@@ -1,0 +1,97 @@
+.product-detail-main-wrapper{
+
+   .product-detail-wrapper{
+      // background-color: #f5b563;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      align-items: center;
+      padding-top: 30px;
+
+      .image{        
+         img{
+            box-shadow: 3px 6px 4px #888888;
+            margin-left: 60px;
+            width: 40vw;
+            height: 40vh;
+            border-radius: 7px;
+         }
+      }
+
+      .details{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+
+         .name{
+            font-size: 1.8em;
+            color: #956d07 ;
+         }
+
+         .description{
+            font-size: 1.3em;
+            color: #545454;
+         }
+
+         .price{
+            h3{
+               font-size: 1.4em;
+               color: #1313eb;
+            }
+         }
+      }
+   }
+
+   .comments-form-wrapper{      
+      display: flex;  
+      justify-content: space-around;
+      align-items: center; 
+      height: 300px;
+
+      .comments-form{      
+         textarea{
+            border: 1px solid #545454;
+            background-color: transparent;
+            font-size: 1.5rem;
+            height: 100px;
+            width: 450px;
+            outline: none;
+            margin-bottom: 12px;
+            border-radius: 8px;
+         }
+
+         .btn-comment{
+            button{
+               color: black;
+               background-color: #daa520;
+               border-radius: 5px;
+               border: 1px solid #daa520;
+               font-size: 1.2em;
+               padding: 7px 30px;
+               transition: 0.2s ease-in-out;   
+
+               &:hover{
+                  background-color: #e9c8a2;
+                  cursor: pointer;
+               }
+            }
+         }
+      }
+
+      .sec-image{          
+         img{            
+            width: 20vw;
+            height: 20vh;
+            border-radius: 7px;
+         }       
+            
+      }
+   }
+
+   .comments-main-wrapper{
+      margin-top: 10px;
+      h4{
+         margin-left: 40px;
+      }
+   }
+}

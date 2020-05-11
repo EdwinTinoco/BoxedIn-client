@@ -1,0 +1,54 @@
+.login-main-wrapper{
+   .login-content-wrapper{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+      margin: 60px 40px;
+
+      .logo-wrapper{
+         img{
+            width: 40vw;
+            height: 40vh;
+         }
+      }
+
+      .login-form-wrapper{
+         input{
+            margin: 6px 6px 10px 0px;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 1em;
+         }
+
+         button{
+            color: black;
+            background-color: #daa520;
+            border-radius: 5px;
+            border: 1px solid #daa520;
+            font-size: 1.2em;
+            padding: 7px 30px;
+            transition: 0.2s ease-in-out;   
+            
+            &:hover{
+               background-color: #e9c8a2;
+               border: 1px solid #e9c8a2;
+               cursor: pointer;
+            }
+      } 
+      }
+   }
+
+   .hero-login{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #e9ac66;
+      height: 200px;
+
+      h2, h3{         
+         color: #242121;
+      }      
+   }
+}

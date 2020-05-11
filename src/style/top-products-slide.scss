@@ -1,0 +1,57 @@
+.slides-wrapper{
+    margin-top: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+
+    h2{
+        align-self: center;
+    }
+
+    .card{
+        text-align: center;
+        padding-top: 10px;
+        opacity: 1;
+        width: 200px;
+        color: white;
+
+        img {
+            display:block;
+            margin:auto;
+            border-radius: 5px;
+        }
+
+        .card-body{
+
+            .card-title{
+                color: #262626;
+                display: block;
+                overflow: hidden;
+                font-size: 14px;
+                line-height: 18px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                margin-bottom: 0 !important;
+            }
+
+            .follow{
+                background-color: #f1a751;
+                border: 1px solid #f1a751;
+                border-radius: 4px;
+                color: #fff;
+                margin-top: 20px !important;
+                transition: 0.2s ease-in-out;
+
+                &:hover{
+                    cursor: pointer;
+                    background-color: #112b42;
+                    border: 1px solid #112b42;
+                }
+            }
+        }
+    }
+}
+
+.slick-prev:before, .slick-next:before {
+    color: black !important;
+}
