@@ -1,19 +1,21 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import Cookies from 'js-cookie'
 
 import Logo from '../../../static/assets/images/logo/Original-on-Transparent.png'
 
+import AuthApi from '../authApi'
 
-import { UserContext } from '../../bootstrap'
+
 
 export default function Login(props) {
-   const [visibility, setVisibility] = useState('hidden')
+
    const [loginEmail, setLoginEmail] = useState('')
    const [loginPassword, setLoginPassword] = useState('')
    const [loginError, setLoginError] = useState("")
 
-   const { setLoggedInUser } = useContext(UserContext)
+   const Auth = useContext(AuthApi)
 
    function handleLoginSubmit(event) {
       event.preventDefault();
@@ -22,14 +24,15 @@ export default function Login(props) {
 
       axios.get(`https://ejt-boxedin-api.herokuapp.com/users`)
          .then(response => {
-            let users = response.data
-
-            users.forEach(user => {
+            console.log(response.data)
+            response.data.forEach(user => {
                if (loginEmail === user.users_email) {
                   if (loginPassword === user.users_password) {
-                     setLoggedInUser(user)
+                     Auth.setUser(user)
+                     console.log("current user", user)
+                     // Cookies.set(user.users_first_name, "loginTrue", { expires: 7 })
+
                      setLoginError("credentials corrects")
-                     props.history.push('/')
                   } else {
                      setLoginError("Email or password is incorrect!!")
                   }
@@ -39,10 +42,6 @@ export default function Login(props) {
             })
          })
    }
-
-   // useEffect(() => {
-   //    setVisibility('hidden')
-   // }, [loginPassword, loginEmail])
 
    return (
       <div className='login-main-wrapper'>

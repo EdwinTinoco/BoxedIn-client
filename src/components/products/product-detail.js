@@ -4,7 +4,7 @@ import axios from "axios"
 import ProductComment from "./product-comment"
 import Logo from '../../../static/assets/images/logo/Black-on-Transparent.png'
 
-import { UserContext } from '../../bootstrap'
+// import { AuthApi } from '../authApi'
 
 export default function ProductDetail(props) {
    const [productItem, setProductItem] = useState({})
@@ -13,7 +13,7 @@ export default function ProductDetail(props) {
    const [comment, setComment] = useState("")
    const [commentsFormVisible, setCommentsFormVisible] = useState("none")
 
-   const { loggedInUser } = useContext(UserContext)
+   // const { loggedInUser } = useContext(Auth)
 
    const handleShoppingCart = () => {
       let dateTimeToday = new Date()
@@ -30,8 +30,10 @@ export default function ProductDetail(props) {
             cart_products_id: parseInt(productId),
             cart_products_name: products_name,
             cart_products_image_url: products_image_url,
-            cart_users_id: loggedInUser.users_id,
-            cart_users_first_name: loggedInUser.users_first_name,
+            cart_users_id: 31,
+            // cart_users_id: loggedInUser.users_id,
+            cart_users_first_name: "Edwin",
+            // cart_users_first_name: loggedInUser.users_first_name,
             cart_date: todayTime,
             cart_quantity_items: 1,
             cart_products_price: products_price
@@ -64,7 +66,8 @@ export default function ProductDetail(props) {
                comments_comment: comment,
                comments_date: todayTime,
                comments_products_id: parseInt(productId),
-               comments_users_id: loggedInUser.users_id
+               comments_users_id: 31
+               // comments_users_id: loggedInUser.users_id
             })
             .then(res => {
                setComment("")
@@ -102,9 +105,9 @@ export default function ProductDetail(props) {
       getProductItem();
       getCommenstByProducst()
 
-      if (loggedInUser.users_role === 'admin' || loggedInUser.users_role === 'user') {
-         setCommentsFormVisible('block')
-      }
+      // if (loggedInUser.users_role === 'admin' || loggedInUser.users_role === 'user') {
+      //    setCommentsFormVisible('block')
+      // }
    }, [])
 
    const {

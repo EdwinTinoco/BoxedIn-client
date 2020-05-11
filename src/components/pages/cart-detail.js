@@ -14,7 +14,7 @@ export default function CartDetail(props) {
    const [arrItemsOrder, setArrItemsOrder] = useState([])
    const [arrItemsOrderWithCartId, setArrItemsOrderWithCartId] = useState([])
    const [order, setOrder] = useState({})
-   const { loggedInUser } = useContext(UserContext)
+   // const { loggedInUser } = useContext(UserContext)
 
    // const order = {
    //    customer: "123456",

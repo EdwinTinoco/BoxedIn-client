@@ -10,28 +10,28 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 import "./style/main.scss";
 
-export const UserContext = createContext()
+// export const UserContext = createContext()
 
-const Index = () => {
-  const [state, setState] = useState({
-    loggedInUser: {}
-  })
+// const Index = () => {
+//   const [state, setState] = useState({
+//     loggedInUser: {}
+//   })
 
-  const actions = {
-    setLoggedInUser: user => setState({ ...state, loggedInUser: user })
-  }
+//   const actions = {
+//     setLoggedInUser: user => setState({ ...state, loggedInUser: user })
+//   }
 
-  return (
-    <UserContext.Provider value={{ ...state, ...actions }}>
-      <App />
-    </UserContext.Provider>
-  )
-}
+//   return (
+//     <UserContext.Provider value={{ ...state, ...actions }}>
+//       <App />
+//     </UserContext.Provider>
+//   )
+// }
 
 function main() {
   ReactDOM.render(
     <BrowserRouter>
-      <Index />
+      <App />
     </BrowserRouter>,
     document.querySelector(".app-wrapper")
   );
