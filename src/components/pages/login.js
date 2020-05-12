@@ -24,13 +24,12 @@ export default function Login(props) {
 
       axios.get(`https://ejt-boxedin-api.herokuapp.com/users`)
          .then(response => {
-            console.log(response.data)
+
             response.data.forEach(user => {
                if (loginEmail === user.users_email) {
                   if (loginPassword === user.users_password) {
                      Auth.setUser(user)
-                     console.log("current user", user)
-                     // Cookies.set(user.users_first_name, "loginTrue", { expires: 7 })
+                     Cookies.set("user", user.users_id, { expires: 7 })
 
                      setLoginError("credentials corrects")
                   } else {

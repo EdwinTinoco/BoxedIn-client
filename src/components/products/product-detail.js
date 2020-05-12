@@ -1,19 +1,25 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from "axios"
+import Cookies from 'js-cookie'
 
 import ProductComment from "./product-comment"
 import Logo from '../../../static/assets/images/logo/Black-on-Transparent.png'
 
-// import { AuthApi } from '../authApi'
+import AuthApi from '../authApi'
 
 export default function ProductDetail(props) {
+   const [userId, setUserId] = useState(Cookies.get("user"))
+   const [userName, setUserName] = useState("")
+   const [currentUser, setCurrentUser] = useState({})
    const [productItem, setProductItem] = useState({})
    const [productComments, setProductComments] = useState([])
    const [productId, setProductId] = useState(props.match.params.slug)
    const [comment, setComment] = useState("")
-   const [commentsFormVisible, setCommentsFormVisible] = useState("none")
+   const [addMessageCart, setAddMessageCart] = useState("")
+   // const [commentsFormVisible, setCommentsFormVisible] = useState("none")
 
-   // const { loggedInUser } = useContext(Auth)
+   const Auth = useContext(AuthApi)
+
 
    const handleShoppingCart = () => {
       let dateTimeToday = new Date()
@@ -30,16 +36,15 @@ export default function ProductDetail(props) {
             cart_products_id: parseInt(productId),
             cart_products_name: products_name,
             cart_products_image_url: products_image_url,
-            cart_users_id: 31,
-            // cart_users_id: loggedInUser.users_id,
-            cart_users_first_name: "Edwin",
-            // cart_users_first_name: loggedInUser.users_first_name,
+            cart_users_id: userId,
+            cart_users_first_name: currentUser.users_first_name,
             cart_date: todayTime,
             cart_quantity_items: 1,
             cart_products_price: products_price
          })
          .then(res => {
             console.log(res)
+            setAddMessageCart("The item was added to the Shopping Cart!")
          })
          .catch(err => console.log("handleShoppingCart Error: ", err))
    }
@@ -66,8 +71,8 @@ export default function ProductDetail(props) {
                comments_comment: comment,
                comments_date: todayTime,
                comments_products_id: parseInt(productId),
-               comments_users_id: 31
-               // comments_users_id: loggedInUser.users_id
+               comments_users_id: 31,
+               comments_users_id: userId
             })
             .then(res => {
                setComment("")
@@ -75,6 +80,21 @@ export default function ProductDetail(props) {
             })
             .catch(err => console.log("Comment handleSubmit Error: ", err))
       }
+   }
+
+   const getCurrentUser = () => {
+      axios.get(`https://ejt-boxedin-api.herokuapp.com/user/${userId}`)
+         .then(res => {
+            setCurrentUser(res.data[0])
+            // if (res.data[0].users_role === "admin") {
+            //    setCommentsFormVisible("block")
+            // } else if (res.data[0].users_role === "user") {
+            //    setCommentsFormVisible("block")
+            // }
+         })
+         .catch(err => {
+            console.log("getCurrentUser error", err)
+         })
    }
 
    const renderCommentsByProduct = () => {
@@ -101,13 +121,20 @@ export default function ProductDetail(props) {
          })
    }
 
+   const setStyle = () => {
+      if (currentUser.users_role === "admin") {
+         return { display: "block" }
+      } else if (currentUser.users_role === "user") {
+         return { display: "block" }
+      } else {
+         return { display: "none" }
+      }
+   }
+
    useEffect(() => {
+      getCurrentUser();
       getProductItem();
       getCommenstByProducst()
-
-      // if (loggedInUser.users_role === 'admin' || loggedInUser.users_role === 'user') {
-      //    setCommentsFormVisible('block')
-      // }
    }, [])
 
    const {
@@ -121,6 +148,8 @@ export default function ProductDetail(props) {
       products_price
    } = productItem
 
+   console.log("product detail desde", Auth.user, currentUser)
+   console.log(userId)
    return (
 
       <div className="product-detail-main-wrapper">
@@ -144,14 +173,13 @@ export default function ProductDetail(props) {
                </div>
                <div className="add-button-cart">
                   <button type="button" onClick={handleShoppingCart}>Add to Cart</button>
+                  <p>{addMessageCart}</p>
                </div>
             </div>
          </div>
 
          <div className="comments-form-wrapper">
-            <form onSubmit={e => handleSubmit(e)} className="comments-form" style={{
-               display: `${commentsFormVisible}`
-            }}>
+            <form onSubmit={e => handleSubmit(e)} className="comments-form" style={setStyle()}>
                <h3>Add a comment</h3>
                <textarea
                   type="text"

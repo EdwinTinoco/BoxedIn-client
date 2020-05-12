@@ -8,8 +8,8 @@ export default function Dashboard(props) {
    const Auth = useContext(AuthApi)
 
    const handleLogout = () => {
-      console.log(Auth.user)
-      Cookies.remove(Auth.user.users_first_name)
+      console.log(Auth.user.users_first_name)
+      Cookies.remove("user")
       Auth.setUser({})
    }
 

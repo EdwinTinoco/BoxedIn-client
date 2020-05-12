@@ -39,6 +39,28 @@
                color: #1313eb;
             }
          }
+
+         .add-button-cart{
+            button{
+               color: black;
+               background-color: #daa520;
+               border-radius: 5px;
+               border: 1px solid #daa520;
+               font-size: 1.2em;
+               padding: 7px 30px;
+               transition: 0.2s ease-in-out;   
+
+               &:hover{
+                  background-color: #e9c8a2;
+                  cursor: pointer;
+               }
+            }
+
+            p{
+               font-size: 1.2em;
+               
+            }
+         }
       }
    }
 

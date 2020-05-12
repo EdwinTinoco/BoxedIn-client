@@ -25,13 +25,14 @@ import AuthApi from "./authApi"
 library.add(faTrash, faSignOutAlt, faBox, faUser, faShoppingCart);
 
 
-function App() {
+function App(props) {
   const [user, setUser] = useState({})
 
   const readCookie = () => {
-    console.log("user object", user)
-    const userName = Cookies.get(user.users_first_name)
-    if (userName) {
+    // console.log("user object", user)
+    const userId = Cookies.get("user")
+    console.log(userId)
+    if (userId) {
       setUser({
         users_id: user.users_id,
         users_first_name: user.users_first_name,
@@ -40,9 +41,9 @@ function App() {
     }
   }
 
-  // useEffect(() => {
-  //   readCookie()
-  // }, [])  
+  useEffect(() => {
+    readCookie()
+  }, [])
 
 
   return (
@@ -108,7 +109,7 @@ const ProtectedLogin = ({ user, component: Component, ...rest }) => {
           <Component />
         ) :
         (
-          <Redirect to="/dashboard" />
+          <Redirect to="/" />
         )
       }
     />

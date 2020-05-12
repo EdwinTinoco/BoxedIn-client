@@ -37,24 +37,41 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      
-      .login-icon{
-         font-size: 1.8em;         
-         margin-right: 40px;
-         a{
-            color: rgb(11, 29, 187);
+
+      .login-logout-wrapper{
+         .logout-icon{
+            font-size: 1.8em;         
+            margin-right: 40px;
+            color:#0f4935;
             transition: 0.3s ease-in-out;
 
             &:hover{
                color: #545454;
+               cursor: pointer;
             }
-         }         
+         }
 
-         .sign-in{
-            font-size: 0.5em;
-            color: #242321;         
+         .login-icon{
+            font-size: 1.8em;         
+            margin-right: 40px;
+            
+            a{
+               color:#0f4935;
+               transition: 0.3s ease-in-out;
+   
+               &:hover{
+                  color: #545454;
+               }
+            }         
+   
+            .sign-in{
+               font-size: 0.5em;
+               color: #242321;         
+            }
          }
       }
+      
+      
 
       .cart-icon{
          font-size: 1.8em;
