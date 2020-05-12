@@ -31,8 +31,6 @@ export default function Dashboard(props) {
    const [userRole, setUserRole] = useState("user")
 
 
-
-
    const handleAddModeProduct = () => {
       setEditMode(false)
       setDeleteMode(false)
@@ -85,7 +83,6 @@ export default function Dashboard(props) {
                },
             )
             .then(response => {
-               console.log(response.data)
                setMessage("Product Added Successfully!")
                setName('')
                setDescription('')
@@ -121,7 +118,6 @@ export default function Dashboard(props) {
                },
             )
             .then(response => {
-               console.log(response.data)
                setMessage("Product Updated Successfully!")
                setName('')
                setDescription('')
@@ -155,7 +151,6 @@ export default function Dashboard(props) {
             },
          )
          .then(response => {
-            console.log(response.data)
             setUserFirstName('')
             setUserLastName('')
             setUserEmail('')
@@ -174,7 +169,6 @@ export default function Dashboard(props) {
       axios
          .delete(`https://ejt-boxedin-api.herokuapp.com/delete-product/${productId}`)
          .then(res => {
-            console.log(res.data)
             setMessage("Product Deleted Succesfully")
             setProductId("")
          })
@@ -187,7 +181,6 @@ export default function Dashboard(props) {
       axios
          .get(`https://ejt-boxedin-api.herokuapp.com/product/${productId}`)
          .then(res => {
-            console.log(res.data)
             setName(res.data[0].products_name)
             setDescription(res.data[0].products_description)
             setInventory(res.data[0].products_inventory)
