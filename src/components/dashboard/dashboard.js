@@ -158,6 +158,7 @@ export default function Dashboard(props) {
             setUserZipCode('')
             setUserPassword('')
             setUserRole('')
+            setMessage("User Added Succesfully!")
          })
          .catch(error => {
             console.log('handleSubmitNewUser error', error)
@@ -284,7 +285,9 @@ export default function Dashboard(props) {
                   onChange={({ target }) => { setPrice(target.value) }}
                   placeholder='Enter Product Price'>
                </input>
+
                {message}
+
                <button type='submit' className='add-button'>Submit</button>
 
             </form>
@@ -341,6 +344,8 @@ export default function Dashboard(props) {
                   <option value='admin'>admin</option>
                   <option value='user'>user</option>
                </select>
+
+               {message}
 
                <button type='submit' className='add-button'>Submit</button>
             </form>
