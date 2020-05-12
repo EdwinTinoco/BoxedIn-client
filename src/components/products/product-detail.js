@@ -9,14 +9,12 @@ import AuthApi from '../authApi'
 
 export default function ProductDetail(props) {
    const [userId, setUserId] = useState(Cookies.get("user"))
-   const [userName, setUserName] = useState("")
    const [currentUser, setCurrentUser] = useState({})
    const [productItem, setProductItem] = useState({})
    const [productComments, setProductComments] = useState([])
    const [productId, setProductId] = useState(props.match.params.slug)
    const [comment, setComment] = useState("")
    const [addMessageCart, setAddMessageCart] = useState("")
-   // const [commentsFormVisible, setCommentsFormVisible] = useState("none")
 
    const Auth = useContext(AuthApi)
 
@@ -86,11 +84,6 @@ export default function ProductDetail(props) {
       axios.get(`https://ejt-boxedin-api.herokuapp.com/user/${userId}`)
          .then(res => {
             setCurrentUser(res.data[0])
-            // if (res.data[0].users_role === "admin") {
-            //    setCommentsFormVisible("block")
-            // } else if (res.data[0].users_role === "user") {
-            //    setCommentsFormVisible("block")
-            // }
          })
          .catch(err => {
             console.log("getCurrentUser error", err)
@@ -148,8 +141,6 @@ export default function ProductDetail(props) {
       products_price
    } = productItem
 
-   console.log("product detail desde", Auth.user, currentUser)
-   console.log(userId)
    return (
 
       <div className="product-detail-main-wrapper">
