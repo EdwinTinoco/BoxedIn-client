@@ -96,10 +96,10 @@ export default function NavigationContainer(props) {
                     <Link to="/">Home</Link>
                 </div>
                 <div className="nav-links">
-                    <Link to="/About">About</Link>
+                    <Link to="/about">About</Link>
                 </div>
                 <div className="nav-links">
-                    <Link to="/Products">Products</Link>
+                    <Link to="/aroducts">Products</Link>
                 </div>
                 <div className="nav-links" style={setStyle()}>
                     <Link to="/dashboard" >Dashboard</Link>
