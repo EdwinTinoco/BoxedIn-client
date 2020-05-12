@@ -32,11 +32,13 @@ function App(props) {
     const userId = Cookies.get("user")
 
     if (userId) {
-      setUser({
-        users_id: user.users_id,
-        users_first_name: user.users_first_name,
-        users_role: user.users_role
-      })
+      setUser(
+        {
+          users_id: user.users_id,
+          users_first_name: user.users_first_name,
+          users_role: user.users_role
+        }
+      )
     }
   }
 
@@ -84,11 +86,13 @@ const Routes = () => {
 }
 
 const ProtectedDashboard = ({ user, component: Component, ...rest }) => {
+  console.log("from protecteddash", user, Cookies.get("user"))
   return (
     <Route
       {...rest}
-      render={() => Object.entries(user).length > 0 ?
-        (
+      render={() => (Object.entries(user).length > 0 && (Cookies.get("user") !== undefined || Cookies.get("user") !== 0)) ?
+        // render={() => Object.entries(user).length > 0 ?
+        (console.log("from protecteddash", user, Cookies.get("user")),
           <Component />
         ) :
         (
@@ -100,10 +104,12 @@ const ProtectedDashboard = ({ user, component: Component, ...rest }) => {
 }
 
 const ProtectedLogin = ({ user, component: Component, ...rest }) => {
+  console.log("from protected login", user, Cookies.get("user"))
   return (
     <Route
       {...rest}
       render={() => Object.entries(user).length === 0 ?
+        // render={() => (Object.entries(user).length === 0 || (Cookies.get("user") === undefined || Cookies.get("user") === 0)) ?
         (
           <Component />
         ) :

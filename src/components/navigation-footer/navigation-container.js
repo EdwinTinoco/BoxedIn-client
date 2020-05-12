@@ -21,6 +21,7 @@ export default function NavigationContainer(props) {
         setIconLogout(false)
         setUserName("Sign In")
         setAdminLinkVisible("none")
+        setCurrentUser({})
         Cookies.remove("user")
         Auth.setUser({})
     }
@@ -43,14 +44,27 @@ export default function NavigationContainer(props) {
     }
 
     const setStyle = () => {
+        console.log("Auth User al entrar la 1ra vez", Auth.user, userId)
         if (Object.entries(Auth.user).length > 0) {
-            if (Auth.user.users_role === "admin") {
+            if (Auth.user.users_role !== undefined) {
+                if (Auth.user.users_role === "admin") {
+                    return { display: "block" }
+                } else {
+                    return { display: "none" }
+                }
+            } else if (userId > 0 || userId !== undefined) {
+                if (currentUser.users_role === "admin") {
+                    return { display: "block" }
+                } else {
+                    return { display: "none" }
+                }
+            }
+        } else if (userId > 0 || userId !== undefined) {
+            if (currentUser.users_role === "admin") {
                 return { display: "block" }
             } else {
                 return { display: "none" }
             }
-        } else {
-            return { display: "none" }
         }
     }
 
