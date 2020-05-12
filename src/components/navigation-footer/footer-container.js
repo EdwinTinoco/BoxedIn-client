@@ -12,23 +12,31 @@ export default function () {
             </div>
 
             <div className="center-column">
-                <div className="nav-links">
-                    <Link to="/">Home</Link>
-                </div>
-                <div className="nav-links">
-                    <Link to="/about">About</Link>
-                </div>
-                <div className="nav-links">
-                    <Link to="/products">Products</Link>
+                <div className="links-wrapper">
+                    <div className="nav-links">
+                        <Link to="/">Home</Link>
+                    </div>
+                    <div className="nav-links">
+                        <Link to="/about">About</Link>
+                    </div>
+                    <div className="nav-links">
+                        <Link to="/products">Products</Link>
+                    </div>
                 </div>
 
                 <div className="copyright">
-                    <p>Copyright</p>
+                    &copy; 2020 Boxed In Co. &#124; All rights reserved (it's a demo for a school project)
                 </div>
             </div>
 
-            <div className="social-media">
-                {/* <FontAwesomeIcon icon="facebookf" /> */}
+            <div className="right-column">
+                <div className="facebook">
+                    {/* <FontAwesomeIcon icon="facebookf" /> */}
+                </div>
+                <div className="instagram">
+                    {/* <FontAwesomeIcon icon="facebookf" /> */}
+                </div>
+
             </div>
         </div>
     );

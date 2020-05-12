@@ -2,6 +2,8 @@
    background-color: #0f4935;
    padding: 50px;
    margin-top: 40px;
+   display: flex;
+   justify-content: space-around;
 
    .left-column {     
       img{
@@ -9,5 +11,65 @@
          height: 80px;
          width: 90px;
       }        
+   }
+
+   .center-column{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .links-wrapper{
+         width: 200px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+
+         a{
+            font-size: 1.5em;
+            color: #636260;
+            text-decoration: none;
+            transition: 0.3s ease-in-out;
+   
+            &:hover{
+               color: black;
+            }
+         }
+      }
+
+      .copyright{
+         margin-top: 30px;
+         font-size: 1em;
+         color: whitesmoke;
+      }
+   }
+
+   .right-column{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .facebook{
+         font-size: 1.8em;         
+         margin-right: 40px;
+         color:#be58dd;
+         transition: 0.3s ease-in-out;
+
+         &:hover{
+            color: #0f4935;
+            cursor: pointer;
+         }
+      }
+      .insta{
+         font-size: 1.8em;         
+         margin-right: 40px;
+         color:#be58dd;
+         transition: 0.3s ease-in-out;
+
+         &:hover{
+            color: #0f4935;
+            cursor: pointer;
+         }
+      }
    }
 }
