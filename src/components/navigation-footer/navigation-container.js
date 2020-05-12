@@ -42,6 +42,18 @@ export default function NavigationContainer(props) {
             })
     }
 
+    const setStyle = () => {
+        if (Object.entries(Auth.user).length > 0) {
+            if (Auth.user.users_role === "admin") {
+                return { display: "block" }
+            } else {
+                return { display: "none" }
+            }
+        } else {
+            return { display: "none" }
+        }
+    }
+
     useEffect(() => {
         if (userId === 0 || userId === undefined) {
             setUserId(0)
@@ -56,20 +68,7 @@ export default function NavigationContainer(props) {
         }
     }, [])
 
-    const setStyle = () => {
-        if (Object.entries(Auth.user).length > 0) {
-            if (Auth.user.users_role === "admin") {
-                return { display: "block" }
-            } else {
-                return { display: "none" }
-            }
-        } else {
-            return { display: "none" }
-        }
-    }
 
-    console.log("navbar desde", Auth.user)
-    console.log(userId)
     return (
         <div className="navigation-main-wrapper">
             <div className="left-column">
@@ -77,8 +76,8 @@ export default function NavigationContainer(props) {
                     <img src={Logo} alt='Logo' />
                 </Link>
             </div>
-            <div className="center-column">
 
+            <div className="center-column">
                 <div className="nav-links">
                     <Link to="/">Home</Link>
                 </div>
@@ -89,9 +88,10 @@ export default function NavigationContainer(props) {
                     <Link to="/Products">Products</Link>
                 </div>
                 <div className="nav-links" style={setStyle()}>
-                    <Link to="/dashboard" >Admin Settings</Link>
+                    <Link to="/dashboard" >Dashboard</Link>
                 </div>
             </div>
+
             <div className="right-column">
                 <div className="login-logout-wrapper">
                     {Object.entries(Auth.user).length > 0 ? (

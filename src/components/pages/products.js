@@ -40,7 +40,7 @@ export default class Products extends Component {
       return (
          <div className="products-main-wrapper">
             <div className="search-bar">
-               <h3>Search bar</h3>
+               {/* <h3>Search bar</h3> */}
             </div>
             <div className="products-items-wrapper">
                {this.productsItems()}

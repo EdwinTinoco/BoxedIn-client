@@ -29,9 +29,8 @@ function App(props) {
   const [user, setUser] = useState({})
 
   const readCookie = () => {
-    // console.log("user object", user)
     const userId = Cookies.get("user")
-    console.log(userId)
+
     if (userId) {
       setUser({
         users_id: user.users_id,

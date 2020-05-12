@@ -1,6 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import paypal from "paypal-checkout"
+import axios from 'axios';
+import Cookies from 'js-cookie'
+
 
 const PaypalCheckoutButton = ({ order }) => {
    const paypalConf = {
@@ -45,21 +48,30 @@ const PaypalCheckoutButton = ({ order }) => {
       return actions.payment.execute()
          .then(response => {
             console.log(response);
-            alert(`Payment processed successfully, ID: ${response.id}`)
+
+            axios.delete(`https://ejt-boxedin-api.herokuapp.com/delete-item-cart-by-user/${Cookies.get("user")}`)
+               .then(res => {
+                  console.log(res.data)
+               })
+               .catch(err => {
+                  console.log("onAuthorize error", err)
+               })
+
+            alert(`Payment processed successfully!, ID: ${response.id}`)
          })
          .catch(error => {
             console.log(error);
-            alert("Error ocurred when it processed the payment with PayPal")
+            alert("Error ocurred when it processed the payment with PayPal!")
          })
    }
 
    const onError = (error) => {
       console.log(error)
-      alert("Payment wasnt processed, try again")
+      alert("Payment wasn't processed, try again!")
    }
 
    const onCancel = (data, actions) => {
-      alert("Payment wasnt processed, the customer canceled the process")
+      alert("Payment wasn't processed, the customer canceled the process!")
    }
 
    return (

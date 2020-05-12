@@ -8,9 +8,9 @@
   .left-column {
      a{
         img{
-           margin-left: 20px;
-         height: 60px;
-         width: 70px;
+            margin-left: 20px;
+            height: 60px;
+            width: 70px;
         }
      }     
    }
@@ -42,11 +42,11 @@
          .logout-icon{
             font-size: 1.8em;         
             margin-right: 40px;
-            color:#0f4935;
+            color:#be58dd;
             transition: 0.3s ease-in-out;
 
             &:hover{
-               color: #545454;
+               color: #0f4935;
                cursor: pointer;
             }
          }
@@ -56,17 +56,17 @@
             margin-right: 40px;
             
             a{
-               color:#0f4935;
+               color:#be58dd;
                transition: 0.3s ease-in-out;
    
                &:hover{
-                  color: #545454;
+                  color: #0f4935;
                }
             }         
    
             .sign-in{
                font-size: 0.5em;
-               color: #242321;         
+               color:black;         
             }
          }
       }
@@ -79,11 +79,11 @@
          margin-right: 30px;
 
          a{
-            color: #0f4935;
+            color: #be58dd;
             transition: 0.3s ease-in-out;
 
             &:hover{
-               color: #545454;
+               color: #0f4935;
             }
          } 
       }
