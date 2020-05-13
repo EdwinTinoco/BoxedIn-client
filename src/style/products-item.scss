@@ -13,17 +13,22 @@
          display: flex;
          flex-direction: column;
          width: 26vw;
-         height: 445px;
+         height: 55vh;
          align-items: center;
          margin-top: 19px;         
          border-radius: 7px;
          box-shadow: 3px 6px 4px #888888;
          padding: 0px 3px 0px 3px;
-   
+
+         .product-category{
+            p{
+               font-size: 1.2em;
+            }
+         }   
    
          .product-image img {
             width: 16vw;
-            height: 16vw;
+            height: 21vh;
             border-radius: 5px;
          }
    

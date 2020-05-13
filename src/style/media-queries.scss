@@ -148,4 +148,22 @@
          }
       }
    }
+
+   // Product, Products-items Media Queries
+   .products-main-wrapper{
+      .products-items-wrapper{
+         grid-template-columns: 1fr 1fr;
+
+         .product-item-wrapper{
+            width: 40vw;
+            height: 53vh;
+
+            .product-image img {
+               width: 30vw;
+               height: 21vh;
+            }
+         }
+      }
+   }
+   
 }

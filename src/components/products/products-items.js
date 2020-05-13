@@ -29,6 +29,7 @@ export default class ProductsItem extends Component {
             <div className='product-image'>
                <img src={products_image_url} alt='Product display' />
             </div>
+
             <Link to={`/product/${products_id}`}>
                <div className='product-info-wrapper'>
                   <div className='product-name'>
@@ -47,8 +48,6 @@ export default class ProductsItem extends Component {
                </div>
             </Link>
          </div>
-
-
       )
    }
 }
