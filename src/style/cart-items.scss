@@ -31,12 +31,12 @@
    }
 
    .cart-items-wrapper{
-      // background-color: #f7ebeb;
       .cart-detail-wrapper{
         display: flex;
+        justify-content: center;
         align-items: center;
       //   margin-top: 15px;
-        margin-left: 100px;
+      //   margin-left: 100px;
 
          .image img{
             width: 16vw;
