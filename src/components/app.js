@@ -6,7 +6,7 @@ import {
   Redirect
 } from 'react-router-dom';
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faTrash, faSignOutAlt, faBox, faUser, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faSignOutAlt, faBox, faUser, faShoppingCart, faStar } from "@fortawesome/free-solid-svg-icons";
 import Cookies from 'js-cookie'
 
 
@@ -22,7 +22,7 @@ import CartDetail from "./pages/cart-detail";
 
 import AuthApi from "./authApi"
 
-library.add(faTrash, faSignOutAlt, faBox, faUser, faShoppingCart);
+library.add(faTrash, faSignOutAlt, faBox, faUser, faShoppingCart, faStar);
 
 
 function App(props) {

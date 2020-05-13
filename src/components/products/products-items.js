@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class ProductsItem extends Component {
    constructor(props) {
@@ -22,7 +23,7 @@ export default class ProductsItem extends Component {
 
          <div className="product-item-wrapper">
             <div className='product-category'>
-               {products_categories}
+               <p>{products_categories}</p>
             </div>
 
             <div className='product-image'>
@@ -30,20 +31,19 @@ export default class ProductsItem extends Component {
             </div>
             <Link to={`/product/${products_id}`}>
                <div className='product-info-wrapper'>
-                  <p>{products_name}</p>
-
-                  {products_description}
-                  {products_stars}
-                  ${products_price}
-                  {/* <div className='product-name'>
-                     <h4>{products_name}</h4>
+                  <div className='product-name'>
+                     <p>{products_name}</p>
                   </div>
                   <div className='product-description'>
-                     <h4>{products_description}</h4>
+                     <p>{products_description}</p>
+                  </div>
+                  <div className='product-stars'>
+                     <FontAwesomeIcon icon="star" />
+                     <p>{products_stars}</p>
                   </div>
                   <div className='product-price'>
-                     <h4>${products_price}</h4>
-                  </div> */}
+                     <p>${products_price}</p>
+                  </div>
                </div>
             </Link>
          </div>

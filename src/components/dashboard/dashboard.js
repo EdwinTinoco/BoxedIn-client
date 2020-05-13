@@ -12,13 +12,13 @@ export default function Dashboard(props) {
    const [deleteMode, setDeleteMode] = useState(false)
 
    const [addEditTitle, setAddEditTitle] = useState("Add New Product")
-   const [message, setMessage] = useState("")
+   const [messageProducts, setMessageProducts] = useState("")
 
    const [name, setName] = useState('')
    const [description, setDescription] = useState('')
    const [inventory, setInventory] = useState()
    const [imageUrl, setImageUrl] = useState('')
-   const [category, setCategory] = useState("Fitness")
+   const [category, setCategory] = useState("Pets")
    const [stars, setStars] = useState()
    const [price, setPrice] = useState()
 
@@ -29,6 +29,7 @@ export default function Dashboard(props) {
    const [userZipCode, setUserZipCode] = useState('')
    const [userPassword, setUserPassword] = useState("")
    const [userRole, setUserRole] = useState("user")
+   const [messageUser, setMessageUser] = useState("")
 
 
    const handleAddModeProduct = () => {
@@ -36,7 +37,7 @@ export default function Dashboard(props) {
       setDeleteMode(false)
       setAddMode(true)
       setProductId("")
-      setMessage("")
+      setMessageProducts("")
       setAddEditTitle("Add New Product")
    }
 
@@ -45,7 +46,7 @@ export default function Dashboard(props) {
       setDeleteMode(false)
       setEditMode(true)
       setProductId("")
-      setMessage("")
+      setMessageProducts("")
       setAddEditTitle("Edit Product")
    }
 
@@ -54,7 +55,7 @@ export default function Dashboard(props) {
       setEditMode(false)
       setDeleteMode(true)
       setProductId("")
-      setMessage("")
+      setMessageProducts("")
       setAddEditTitle("Delete Product")
    }
 
@@ -83,7 +84,7 @@ export default function Dashboard(props) {
                },
             )
             .then(response => {
-               setMessage("Product Added Successfully!")
+               setMessageProducts("Product Added Successfully!")
                setName('')
                setDescription('')
                setInventory("")
@@ -118,7 +119,7 @@ export default function Dashboard(props) {
                },
             )
             .then(response => {
-               setMessage("Product Updated Successfully!")
+               setMessageProducts("Product Updated Successfully!")
                setName('')
                setDescription('')
                setInventory("")
@@ -158,7 +159,7 @@ export default function Dashboard(props) {
             setUserZipCode('')
             setUserPassword('')
             setUserRole('')
-            setMessage("User Added Succesfully!")
+            setMessageUser("User Added Succesfully!")
          })
          .catch(error => {
             console.log('handleSubmitNewUser error', error)
@@ -170,7 +171,7 @@ export default function Dashboard(props) {
       axios
          .delete(`https://ejt-boxedin-api.herokuapp.com/delete-product/${productId}`)
          .then(res => {
-            setMessage("Product Deleted Succesfully")
+            setMessageProducts("Product Deleted Succesfully")
             setProductId("")
          })
          .catch(err => {
@@ -264,12 +265,12 @@ export default function Dashboard(props) {
                <select className='new-entry-input new-entry-select'
                   value={category}
                   onChange={({ target }) => { setCategory(target.value) }}>
-                  <option value='Fitness'>Fitness</option>
-                  <option value='Yoga'>Yoga</option>
-                  <option value='Babys'>Babys</option>
-                  <option value='Pregnancy'>Pregnancy</option>
-                  <option value='Autos'>Autos</option>
-                  <option value='Motorcycles'>Motorcycles</option>
+                  <option value='Women'>Women</option>
+                  <option value='Men'>Men</option>
+                  <option value='Kids'>Kids</option>
+                  <option value='Food'>Food</option>
+                  <option value='Hobbies'>Hobbies</option>
+                  <option value='Pets'>Pets</option>
                </select>
 
                <input type='text'
@@ -286,7 +287,7 @@ export default function Dashboard(props) {
                   placeholder='Enter Product Price'>
                </input>
 
-               {message}
+               {messageProducts}
 
                <button type='submit' className='add-button'>Submit</button>
 
@@ -345,7 +346,7 @@ export default function Dashboard(props) {
                   <option value='user'>user</option>
                </select>
 
-               {message}
+               {messageUser}
 
                <button type='submit' className='add-button'>Submit</button>
             </form>
