@@ -73,5 +73,34 @@
    }
 
    // Footer Container Media Queries
+   .footer-main-wrapper{
+      .img-links-wrapper{
+         flex-direction: column;
+         justify-content: center;
 
+         .left-column{
+            order: 2;
+            
+            img{
+               margin-top: 15px;
+               padding-right: 0px;
+            }           
+         }
+   
+         .center-column{
+            order: 1;
+   
+            .links-wrapper{
+               flex-direction: column;
+               margin-top: 15px;
+   
+               .nav-links{
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+                  font-size: 1.3em;
+               }  
+            }
+         }
+      }
+   }
 }
