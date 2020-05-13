@@ -209,13 +209,13 @@ export default function Dashboard(props) {
       <div className="dashboard-main-wrapper">
          <div className="add-form-wrapper">
             <div className="add-edit-wrapper">
+               <div className="title-add-edit">
+                  <h1>{addEditTitle}</h1>
+               </div>
                <div className="add-edit-buttons">
                   <button onClick={handleAddModeProduct}>Add</button>
                   <button onClick={handleEditModeProduct}>Edit</button>
                   <button onClick={handleDeleteModeProduct}>Delete</button>
-               </div>
-               <div className="title-add-edit">
-                  <h1>{addEditTitle}</h1>
                </div>
             </div>
             <div className="product-id-search" style={styleDisplay()}>

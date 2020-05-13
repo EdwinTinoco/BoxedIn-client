@@ -2,15 +2,13 @@
    display: flex;   
    justify-content: space-around;
    align-items: center;   
-   // box-shadow: 1px solid #545454;
-   // margin-bottom: 20px;
-   // height: 65vh;
 
    .add-form-wrapper{
      text-align: center;  
      
      .add-edit-wrapper{
          display: flex;
+         flex-direction: column;
          justify-content: space-around;
          align-items: center;
 
@@ -41,10 +39,11 @@
         
 
          .new-entry-input {
-            width: 35vw;
+            width: 40vw;
             margin-bottom: 15px;
-            font-size: 1em;
+            font-size: 1.2em;
             border: #e6a249 2px solid;
+            padding: 10px 30px;
           }
 
          .add-button{
