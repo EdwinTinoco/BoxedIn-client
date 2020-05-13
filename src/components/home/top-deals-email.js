@@ -41,13 +41,9 @@ export default class topDealsByEmail extends Component {
 
                 <div className="right-colum">
                     <FontAwesomeIcon className="box-icon" icon="box" />
-                    <div className="learn-more">
-                        <div>
-                            <p>BoxedIn App</p>
-                        </div>
-                        <div className="learn">
-                            <p>Learn more></p>
-                        </div>
+                    <div className="boxedin-learn-more">
+                        <p className="boxedin">BoxedIn App</p>
+                        {/* <p className="learn-more">Learn more></p> */}
                     </div>
                 </div>
             </div>

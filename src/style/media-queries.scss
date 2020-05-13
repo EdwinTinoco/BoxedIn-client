@@ -72,6 +72,25 @@
       }
    }
 
+   .deals-email-wrapper{
+      p{
+         font-size: 1.1em;
+      }
+
+      .right-colum{
+         .box-icon{
+            font-size: 1.9em;           
+            margin-right: 15px;
+         }
+
+         .boxedin-learn-more{
+            .boxedin{
+               font-size: 1.5em;              
+           }
+         }
+      }
+   }
+
    // Footer Container Media Queries
    .footer-main-wrapper{
       .img-links-wrapper{
@@ -80,7 +99,7 @@
 
          .left-column{
             order: 2;
-            
+
             img{
                margin-top: 15px;
                padding-right: 0px;
