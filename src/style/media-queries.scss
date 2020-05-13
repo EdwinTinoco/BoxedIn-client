@@ -132,10 +132,19 @@
    }
 
    // About Page Media Queries
-   .about-main-wrapper{
-      display: grid;
-      grid-template-columns: 1fr;
-      justify-content: center;
-      align-items: center;
+   .squares-wrapper{
+      .squares{
+         .square{
+            grid-template-columns: 1fr !important;
+
+            .square-text-wrapper {
+               order: 1;
+            }
+
+            .img-wrapper {
+               order: 2;
+            }
+         }
+      }
    }
 }
