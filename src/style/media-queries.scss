@@ -224,8 +224,15 @@
    
    // Dashboard Media Queries
    .dashboard-main-wrapper{
-      width: 100%;
       flex-direction: column;
-      justify-content: center;
+
+      .add-form-wrapper{
+         .add-forms{
+            .new-entry-input {
+               width: 70vw;
+               padding: 5px 10px;
+            }
+         }
+      }
    }
 }

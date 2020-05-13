@@ -262,17 +262,6 @@ export default function Dashboard(props) {
                   placeholder='Enter Product Image URL'>
                </input>
 
-               <select className='new-entry-input new-entry-select'
-                  value={category}
-                  onChange={({ target }) => { setCategory(target.value) }}>
-                  <option value='Women'>Women</option>
-                  <option value='Men'>Men</option>
-                  <option value='Kids'>Kids</option>
-                  <option value='Food'>Food</option>
-                  <option value='Hobbies'>Hobbies</option>
-                  <option value='Pets'>Pets</option>
-               </select>
-
                <input type='text'
                   className='new-entry-input'
                   value={stars}
@@ -286,6 +275,17 @@ export default function Dashboard(props) {
                   onChange={({ target }) => { setPrice(target.value) }}
                   placeholder='Enter Product Price'>
                </input>
+
+               <select className='new-entry-input new-entry-select'
+                  value={category}
+                  onChange={({ target }) => { setCategory(target.value) }}>
+                  <option value='Women'>Women</option>
+                  <option value='Men'>Men</option>
+                  <option value='Kids'>Kids</option>
+                  <option value='Food'>Food</option>
+                  <option value='Hobbies'>Hobbies</option>
+                  <option value='Pets'>Pets</option>
+               </select>
 
                {messageProducts}
 
@@ -350,7 +350,6 @@ export default function Dashboard(props) {
 
                <button type='submit' className='add-button'>Submit</button>
             </form>
-
          </div>
       </div>
    )

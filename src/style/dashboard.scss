@@ -34,8 +34,10 @@
       .add-forms{
          display: flex;
          flex-direction: column;
-         padding-left: 25px;
-         padding-right: 25px;
+         justify-content: center;
+         align-items: center;
+         // padding-left: 25px;
+         // padding-right: 25px;
         
 
          .new-entry-input {
