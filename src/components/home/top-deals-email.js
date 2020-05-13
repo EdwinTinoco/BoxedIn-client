@@ -2,28 +2,29 @@ import React, { Component } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class topDealsByEmail extends Component {
-    constructor() {
-        super()
+    // constructor() {
+    //     super()
 
-        this.state = {
-            email: ""
-        }
+    //     this.state = {
+    //         email: ""
+    //     }
 
-        this.handleChange = this.handleChange.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    //     this.handleChange = this.handleChange.bind(this);
+    //     // this.handleSubmit = this.handleSubmit.bind(this);
+    // }
 
-    handleChange(event) {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    }
+    // handleChange(event) {
+    //     this.setState({
+    //         [event.target.name]: event.target.value
+    //     });
+    // }
 
     render() {
         return (
             <div className="deals-email-wrapper">
-                <div className="left-column">
-                    <p>Get the latest deals and more.</p>
+                <p>Get the latest deals and more.</p>
+                {/* <div className="left-column">
+                    
 
                     <form className="deals-email-form">
                         <input
@@ -36,7 +37,7 @@ export default class topDealsByEmail extends Component {
 
                         <button className="btn" type="submit">Send</button>
                     </form>
-                </div>
+                </div> */}
 
                 <div className="right-colum">
                     <FontAwesomeIcon className="box-icon" icon="box" />
@@ -44,8 +45,8 @@ export default class topDealsByEmail extends Component {
                         <div>
                             <p>BoxedIn App</p>
                         </div>
-                        <div>
-                            <a href="/">Learn more></a>
+                        <div className="learn">
+                            <p>Learn more></p>
                         </div>
                     </div>
                 </div>

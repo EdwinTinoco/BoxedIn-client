@@ -6,7 +6,18 @@
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: cover;        
+    }
+
+    .top-heading{
+        background-color: #97f1e4;
+        text-align: center;
+        box-shadow: 3px 6px 4px #0c5046;       
+        
+        h1{
+            color: #534f4f;
+            font-size: 2em;
+        }
     }
 
     .btn-up-wrapper{
@@ -24,7 +35,6 @@
             cursor: pointer;
             padding: 15px;
             border-radius: 4px;
-          }
+        }
     }
-
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from "axios"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Cookies from 'js-cookie'
 
 import ProductComment from "./product-comment"
@@ -156,7 +157,8 @@ export default function ProductDetail(props) {
                   <h3>{products_description}</h3>
                </div>
                <div className="stars">
-                  <h3>Stars {products_stars}</h3>
+                  <FontAwesomeIcon icon="star" />
+                  <h3>{products_stars}</h3>
                </div>
                <div className="price">
                   <h3>${products_price}</h3>

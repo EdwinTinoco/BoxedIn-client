@@ -1,5 +1,5 @@
 import React from 'react';
-import profilePicture from "../../../static/assets/images/bio/edwin_driving.jpg"
+import AboutPicture from "../../images/backgrounds/bg-boxes1.jpg"
 
 export default function () {
     return (
@@ -7,13 +7,16 @@ export default function () {
             <div
                 className="left-column"
                 style={{
-                    background: "url(" + profilePicture + ") no-repeat",
+                    background: "url(" + AboutPicture + ") no-repeat",
                     backgroundSize: "cover",
                     backgroundPosition: "center"
                 }}
 
             />
             <div className="right-column">
+                <div className="title">
+                    <h1>About Us</h1>
+                </div>
                 Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis
                 dapibus posuere velit aliquet. Sed posuere consectetur est at lobortis.
                 Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.

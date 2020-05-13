@@ -4,19 +4,20 @@
     height: 110px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;  
+    text-align: center; 
+
+    p{
+        font-size: 1.8em;
+        color: black;
+        margin-left: 30px;
+        margin-right: 60px;
+    }
 
     .left-column{
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        p{
-            font-size: 1.8em;
-            color: black;
-            margin-left: 30px;
-            margin-right: 60px;
-        }
 
         .deals-email-form{
             input{
@@ -62,7 +63,7 @@
                 margin-right: 70px;
             }
     
-            a{
+            .learn p{
                 font-size: 0.9em;
                 color: whitesmoke;
                 text-decoration: none;
