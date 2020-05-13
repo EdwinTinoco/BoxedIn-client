@@ -89,7 +89,7 @@ export default function CartDetail(props) {
 
             setOrder({
                customer: userId,
-               total: tempTotalAmount,
+               total: tempTotalAmount.toFixed(2),
                items: finalNewArrItemsOrder
             })
          }).catch(error => {
@@ -148,7 +148,7 @@ export default function CartDetail(props) {
 
             setOrder({
                customer: userId,
-               total: tempTotalAmount,
+               total: tempTotalAmount.toFixed(2),
                items: finalNewArrItemsOrder
             })
          }).catch(error => {
@@ -194,7 +194,7 @@ export default function CartDetail(props) {
 
             setOrder({
                customer: userId,
-               total: tempTotalAmount,
+               total: tempTotalAmount.toFixed(2),
                items: finalNewArrItemsOrder
             })
          }).catch(error => {
@@ -212,7 +212,7 @@ export default function CartDetail(props) {
 
       setOrder({
          customer: userId,
-         total: result,
+         total: result.toFixed(2),
          items: tempArrItemsOrderWithoutCartId
       })
    }
