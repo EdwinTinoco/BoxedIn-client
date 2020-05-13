@@ -235,4 +235,43 @@
          }
       }
    }
+
+   // Login Media Queries
+   .login-main-wrapper{
+      .login-content-wrapper{
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+
+         .logo-wrapper{
+            order: 2;
+
+            img{
+               width: 40vw;
+               height: 20vh;
+            }
+         }
+
+         .login-wrapper{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .login-form-wrapper{
+               input{                 
+                  padding: 12px;                  
+                  width: 45vw;
+               }
+            }
+         }        
+      }
+
+      .hero-login{
+         h2, h3{         
+            font-size: 1.2em;
+         }    
+      }
+   }
 }
