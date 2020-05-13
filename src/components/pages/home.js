@@ -1,5 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import TopProductsSlider from '../home/top-products-slider';
 import TopDealsByEmail from '../home/top-deals-email';
