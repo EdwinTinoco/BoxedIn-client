@@ -8,11 +8,12 @@ export default function () {
     return (
         <div className="home-main-wrapper">
             <div className="hero-section">
-
-            </div>
-
-            <div className="top-heading">
-                <h1>Sorprise Box for Everyone!!</h1>
+                <div className="background-image">
+                    {/* Aqui va la imagen */}
+                </div>
+                <div className="top-heading">
+                    <h1>Surprise Box for Everyone!!</h1>
+                </div>
             </div>
 
             <TopProductsSlider />

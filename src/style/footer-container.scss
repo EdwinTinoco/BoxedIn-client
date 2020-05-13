@@ -3,73 +3,78 @@
    padding: 50px;
    // margin-top: 40px;
    display: flex;
-   justify-content: space-around;
+   flex-direction: column;
+   // justify-content: center;
+   align-items: center;
 
-   .left-column {     
-      img{
-         margin-left: 20px;
-         height: 80px;
-         width: 90px;
-      }        
-   }
-
-   .center-column{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      .links-wrapper{
-         width: 200px;
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-
-         a{
-            font-size: 1.5em;
-            color: #42beaa;
-            text-decoration: none;
-            transition: 0.3s ease-in-out;
-   
-            &:hover{
-               color: black;
-            }
-         }
-      }
-
-      .copyright{
-         margin-top: 30px;
-         font-size: 1em;
-         color: whitesmoke;
-      }
-   }
-
-   .right-column{
+   .img-links-wrapper{     
       display: flex;
       justify-content: space-around;
       align-items: center;
 
-      .facebook{
-         font-size: 1.8em;         
-         margin-right: 40px;
-         color:#be58dd;
-         transition: 0.3s ease-in-out;
-
-         &:hover{
-            color: #0f4935;
-            cursor: pointer;
+      .left-column {     
+         img{
+            padding-right: 40px;
+            height: 80px;
+            width: 90px;
+         }        
+      }
+   
+      .center-column{
+   
+         .links-wrapper{
+            width: 200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+   
+            a{
+               font-size: 1.5em;
+               color: #42beaa;
+               text-decoration: none;
+               transition: 0.3s ease-in-out;
+      
+               &:hover{
+                  color: black;
+               }
+            }
          }
       }
-      .insta{
-         font-size: 1.8em;         
-         margin-right: 40px;
-         color:#be58dd;
-         transition: 0.3s ease-in-out;
-
-         &:hover{
-            color: #0f4935;
-            cursor: pointer;
+   
+      .right-column{
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+   
+         .facebook{
+            font-size: 1.8em;         
+            margin-right: 40px;
+            color:#be58dd;
+            transition: 0.3s ease-in-out;
+   
+            &:hover{
+               color: #0f4935;
+               cursor: pointer;
+            }
+         }
+         .insta{
+            font-size: 1.8em;         
+            margin-right: 40px;
+            color:#be58dd;
+            transition: 0.3s ease-in-out;
+   
+            &:hover{
+               color: #0f4935;
+               cursor: pointer;
+            }
          }
       }
    }
+
+   .copyright{
+      margin-top: 50px;
+      font-size: 1em;
+      color: whitesmoke;
+   }
+   
 }
