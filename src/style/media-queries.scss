@@ -130,4 +130,12 @@
          }
       }
    }
+
+   // About Page Media Queries
+   .about-main-wrapper{
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      align-items: center;
+   }
 }

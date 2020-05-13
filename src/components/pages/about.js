@@ -3,7 +3,7 @@ import AboutPicture from "../../images/backgrounds/bg-boxes1.jpg"
 
 export default function () {
     return (
-        <div className="content-page-wrapper">
+        <div className="about-main-wrapper">
             <div
                 className="left-column"
                 style={{
