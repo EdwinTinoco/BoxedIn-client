@@ -130,4 +130,21 @@
          }
       }
    }
+
+   // About Page Media Queries
+   .squares-wrapper{
+      .squares{
+         .square{
+            grid-template-columns: 1fr !important;
+
+            .square-text-wrapper {
+               order: 1;
+            }
+
+            .img-wrapper {
+               order: 2;
+            }
+         }
+      }
+   }
 }
