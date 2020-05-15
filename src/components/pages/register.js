@@ -2,6 +2,9 @@ import React, { useState, useContext, useEffect } from "react"
 import axios from "axios"
 import Cookies from 'js-cookie'
 
+import Logo from '../../../static/assets/images/logo/Original-on-Transparent.png'
+import AuthApi from '../authApi'
+
 
 export default function Register(props) {
    const [userFirstName, setUserFirstName] = useState('')
@@ -12,7 +15,9 @@ export default function Register(props) {
    const [userPassword, setUserPassword] = useState("")
    const [messageUser, setMessageUser] = useState("")
 
-   const handleSubmitNewUser = () => {
+   const Auth = useContext(AuthApi)
+
+   const handleSubmitRegisterNewUser = () => {
       event.preventDefault();
 
       axios
@@ -29,6 +34,10 @@ export default function Register(props) {
             },
          )
          .then(response => {
+            console.log("new user", response.data)
+            Auth.setUser(response.data)
+            Cookies.set("user", response.data, { expires: 7 })
+
             setUserFirstName('')
             setUserLastName('')
             setUserEmail('')
@@ -38,7 +47,7 @@ export default function Register(props) {
             setMessageUser("User Added Succesfully!")
          })
          .catch(error => {
-            console.log('handleSubmitNewUser error', error)
+            console.log('handleSubmitRegisterNewUser error', error)
          })
    }
 
@@ -47,55 +56,53 @@ export default function Register(props) {
       <div className="dashboard-main-wrapper">
          <div className="add-form-wrapper">
 
-            <div className="add-form-wrapper">
-               <h1>Add new User</h1>
-               <form onSubmit={handleSubmitNewUser} className="add-forms">
-                  <input type='text'
-                     value={userFirstName}
-                     onChange={({ target }) => { setUserFirstName(target.value) }}
-                     className='new-entry-input'
-                     placeholder='Enter User First Name'>
-                  </input>
+            <form onSubmit={handleSubmitRegisterNewUser} className="add-forms">
+               <h1>Register New User</h1>
+               <input type='text'
+                  value={userFirstName}
+                  onChange={({ target }) => { setUserFirstName(target.value) }}
+                  className='new-entry-input'
+                  placeholder='Enter User First Name'>
+               </input>
 
-                  <input type='text'
-                     value={userLastName}
-                     onChange={({ target }) => { setUserLastName(target.value) }}
-                     className='new-entry-input'
-                     placeholder='Enter User Last Name'>
-                  </input>
+               <input type='text'
+                  value={userLastName}
+                  onChange={({ target }) => { setUserLastName(target.value) }}
+                  className='new-entry-input'
+                  placeholder='Enter User Last Name'>
+               </input>
 
-                  <input type='email'
-                     className='new-entry-input'
-                     value={userEmail}
-                     onChange={({ target }) => { setUserEmail(target.value) }}
-                     placeholder='Enter User Email'>
-                  </input>
+               <input type='email'
+                  className='new-entry-input'
+                  value={userEmail}
+                  onChange={({ target }) => { setUserEmail(target.value) }}
+                  placeholder='Enter User Email'>
+               </input>
 
-                  <input type='text'
-                     className='new-entry-input'
-                     value={userAddress}
-                     onChange={({ target }) => { setUserAddress(target.value) }}
-                     placeholder='Enter User Address'>
-                  </input>
+               <input type='text'
+                  className='new-entry-input'
+                  value={userAddress}
+                  onChange={({ target }) => { setUserAddress(target.value) }}
+                  placeholder='Enter User Address'>
+               </input>
 
-                  <input type='text'
-                     className='new-entry-input'
-                     value={userZipCode}
-                     onChange={({ target }) => { setUserZipCode(target.value) }}
-                     placeholder='Enter User Zip Code'>
-                  </input>
+               <input type='text'
+                  className='new-entry-input'
+                  value={userZipCode}
+                  onChange={({ target }) => { setUserZipCode(target.value) }}
+                  placeholder='Enter User Zip Code'>
+               </input>
 
-                  <input type='password'
-                     className='new-entry-input'
-                     value={userPassword}
-                     onChange={({ target }) => { setUserPassword(target.value) }}
-                     placeholder='Enter User Password'>
-                  </input>
+               <input type='password'
+                  className='new-entry-input'
+                  value={userPassword}
+                  onChange={({ target }) => { setUserPassword(target.value) }}
+                  placeholder='Enter User Password'>
+               </input>
 
-                  <button type='submit' className='add-button'>Submit</button>
-               </form>
+               <button type='submit' className='add-button'>Submit</button>
+            </form>
 
-            </div>
          </div>
       </div>
    )

@@ -8,7 +8,6 @@ import Logo from '../../../static/assets/images/logo/Original-on-Transparent.png
 import AuthApi from '../authApi'
 
 
-
 export default function Login(props) {
 
    const [loginEmail, setLoginEmail] = useState('')
@@ -83,9 +82,9 @@ export default function Login(props) {
 
                   <div>
                      <hr />
-                     <Link className='new-account-button-link' to='/new-account'>
-                        <div className='new-account-button'>
-                           CREATE NEW ACCOUNT
+                     <Link className='new-account-button-link' to='/register'>
+                        <div className='register-link'>
+                           Don't have an account? Register
                      </div>
                      </Link>
                   </div>
