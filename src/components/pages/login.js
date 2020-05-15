@@ -83,11 +83,11 @@ export default function Login(props) {
 
                   <div>
                      <hr />
-                     {/* <Link className='new-account-button-link' to='/new-account'>
+                     <Link className='new-account-button-link' to='/new-account'>
                         <div className='new-account-button'>
                            CREATE NEW ACCOUNT
                      </div>
-                     </Link> */}
+                     </Link>
                   </div>
                </div>
             </div>
