@@ -84,7 +84,7 @@ export default function Login(props) {
                      <hr />
                      <Link className='new-account-button-link' to='/register'>
                         <div className='register-link'>
-                           Don't have an account? Register
+                           Don't have an account? Register here
                      </div>
                      </Link>
                   </div>
