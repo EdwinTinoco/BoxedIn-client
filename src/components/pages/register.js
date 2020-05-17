@@ -35,8 +35,8 @@ export default function Register(props) {
          )
          .then(response => {
             console.log("new user", response.data)
-            Auth.setUser(response.data)
-            Cookies.set("user", response.data, { expires: 7 })
+            Auth.setUser(response.data[0])
+            Cookies.set("user", response.data[0].users_id, { expires: 7 })
 
             setUserFirstName('')
             setUserLastName('')
