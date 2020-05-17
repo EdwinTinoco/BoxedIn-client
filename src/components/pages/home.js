@@ -11,7 +11,7 @@ export default function () {
                     {/* Aqui va la imagen */}
                 </div>
                 <div className="top-heading">
-                    <h1>Surprise Box for Everyone!!</h1>
+                    <h1>Surprise Boxes for Everyone!!</h1>
                 </div>
             </div>
 

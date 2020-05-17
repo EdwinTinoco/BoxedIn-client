@@ -14,6 +14,7 @@ import NavigationContainer from "./navigation-footer/navigation-container"
 import FooterContainer from "./navigation-footer/footer-container"
 import Home from "./pages/home";
 import Login from "./pages/login";
+import Register from "./pages/register";
 import About from "./pages/about";
 import Products from "./pages/products";
 import Dashboard from "./dashboard/dashboard"
@@ -68,6 +69,7 @@ const Routes = () => {
     <Switch>
       <Route exact path="/" component={Home} />
       <ProtectedLogin path="/login" user={Auth.user} component={Login} />
+      <ProtectedRegister path="/register" user={Auth.user} component={Register} />
       <Route path="/about" component={About} />
       <Route path="/products" component={Products} />
       <ProtectedDashboard path="/dashboard" user={Auth.user} component={Dashboard} />
@@ -110,6 +112,23 @@ const ProtectedLogin = ({ user, component: Component, ...rest }) => {
       {...rest}
       render={() => Object.entries(user).length === 0 ?
         // render={() => (Object.entries(user).length === 0 || (Cookies.get("user") === undefined || Cookies.get("user") === 0)) ?
+        (
+          <Component />
+        ) :
+        (
+          <Redirect to="/" />
+        )
+      }
+    />
+  )
+}
+
+const ProtectedRegister = ({ user, component: Component, ...rest }) => {
+  console.log("from protected register", user, Cookies.get("user"))
+  return (
+    <Route
+      {...rest}
+      render={() => Object.entries(user).length === 0 ?
         (
           <Component />
         ) :
